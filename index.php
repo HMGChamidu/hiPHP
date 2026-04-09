@@ -1,20 +1,17 @@
 <html>
     <head>
         <title>
-
+    Chamidu
         </title>
     </head>
     <body>
 
-    <form method="get">
-        <input type="text" name="username">
-        <button type="submit">Submit</button>
-    </form>
 
-    <?php
-
-$myname = $_GET['username'];
-echo $myname. " is a Handsome boy";
-    ?>
+<?php
+echo "Chamidu TV<br>"; //comment
+echo "Hi Everyone...<br>";
+echo "Hi Everyone...";
+?>
     </body>
-</html>
+
+</html> 

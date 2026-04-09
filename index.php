@@ -6,10 +6,15 @@
     </head>
     <body>
 
+    <form method="get">
+        <input type="text" name="username">
+        <button type="submit">Submit</button>
+    </form>
+
     <?php
 
-$myname = "Chamidu";
-echo $myname;
+$myname = $_GET['username'];
+echo $myname. " is a Handsome boy";
     ?>
     </body>
 </html>

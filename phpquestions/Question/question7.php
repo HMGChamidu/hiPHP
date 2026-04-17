@@ -15,6 +15,15 @@
         } 
         ?>
     </form>
-    
+    <?php
+    $name = "Chamidu";
+    $city = "Matara";
+
+    echo "My name is " .$name . " from " .$city;
+    ?>
 </body>
 </html>
+
+
+
+

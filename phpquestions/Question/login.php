@@ -15,6 +15,7 @@
     </form>
 
     <?php 
+    session_start();
     $conn= mysqli_connect("localhost", "root", "", "testdb");
 
     if(isset($_POST['username'])){
@@ -22,16 +23,25 @@
         $pass = $_POST['password'];
 
         $sql = "SELECT * FROM accounts 
-                 WHERE Username = '$user' AND Password ='$pass' ";
+                 WHERE Username = '$user' ";
     
 
     $result = mysqli_query($conn, $sql);
     
     if(mysqli_num_rows($result)==1){
-        echo "Login Success ✅";
+        $row= mysqli_fetch_assoc($result);
+
+        if(password_verify($pass, $row['Password'])){
+            $_SESSION['user'] = $user;
+
+         echo "Login Success ✅";
+        
     }else{
-        echo "Invalid Login ❌";
+        echo "Wrong password ❌";
        
+    }
+    }else{
+        echo "User not found ❌";
     }
     }
     ?>

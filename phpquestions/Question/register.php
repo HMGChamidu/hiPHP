@@ -20,10 +20,15 @@
         $user = $_POST['username'];
         $pass = $_POST['password'];
 
-       $sql = "INSERT INTO accounts (Username, Password) VALUES ('$user', '$pass')";
+        $hashed = password_hash($pass, PASSWORD_DEFAULT);
+
+       $sql = "INSERT INTO accounts (Username, Password) VALUES ('$user', '$hashed')";
     mysqli_query($conn, $sql);
 
-    echo "Registered!";
+   
+
+
+    echo "Registered securely!";
         }
         
     

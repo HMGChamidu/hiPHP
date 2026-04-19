@@ -13,6 +13,20 @@
         Password: <input type = "password" name="password"><br><br>
         <input type="submit" value="Register">
     </form>
+    <?php 
+    $conn = mysqli_connect("localhost", "root", "", "testdb");
     
+    if(isset($_POST['username'])){
+        $user = $_POST['username'];
+        $pass = $_POST['password'];
+
+       $sql = "INSERT INTO accounts (Username, Password) VALUES ('$user', '$pass')";
+    mysqli_query($conn, $sql);
+
+    echo "Registered!";
+        }
+        
+    
+    ?>
 </body>
 </html>
